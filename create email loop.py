@@ -40,12 +40,12 @@ def connection():
             token = jsonresult['csrfToken']
             global cookie
             cookie = connection.cookies.get_dict()
-            root.after(2,createEMAIL)
+            root.after(2,createemail)
         else:
             text_box.insert("1.0", "An error occurred. Error details: \n" + connection.text + "\n")
 
 # Start creating e-mail interactions depending on the timeout specified. 
-def createEMAIL():   
+def createemail():   
     timeo = int(timeo_entry.get()) * 1000 
     wg = wg_entry.get()
     email = email_entry.get()
